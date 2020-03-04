@@ -80,6 +80,14 @@
 	font-size: 2em;
 	padding-left: 20px;
 }
+#slogan{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 25px;
+	color:var(--color-canard);
+	font-family: var(--ff-principale);
+	letter-spacing: .3em;
+}
 
 .my-services{
 	height: 100vh;
@@ -107,6 +115,7 @@
 .section__title--about{
 	grid-area:title;
 }
+
 .section__subtitle--about{
 	grid-area:subtitle;
 	height: 50px;
@@ -210,7 +219,9 @@ h2{
 	color: var(--color-jaune);
 }
 h3{
-	font-size: var(--fs-h3);  
+	font-size: var(--fs-h3);
+	font-family:var(--ff-second);  
+	color: var(--color-canard);
 }
 
 /*Titres et sous-titres*/
@@ -348,9 +359,10 @@ header{
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 25px;
+	padding-bottom: 20px;
 	color:var(--color-canard);
 	font-family: var(--ff-principale);
-	letter-spacing: .3em;
+	letter-spacing: .2em;
 }
 /*My Services section*/
 
@@ -388,6 +400,7 @@ header{
 }
 
 /*The about me section*/
+
 .about-me{
 	max-width: 1000px;
 	margin:0 auto;
@@ -411,15 +424,21 @@ header{
 	text-align: center;
 	border-radius: 20px 20px 0 0;
 	background-color: var(--color-ciel);
-	height: 100vh;
+	/*height: 100vh;*/
 }
-.section__subtitle, .portfolio{
-	color:black;
+.section__title--work{
+	color:var(--color-jaune);
+	position: relative;
 }
-.section__subtitle{
-	font-family: var(--ff-second);
-	font-size: var(--fs-h3);
-	margin-bottom: 3.4em;
+/*surlignement du titre*/
+.section__title--work::after{
+	content: "";
+	display: block;
+	width: 15%;
+	height: 2px;
+	margin: .5em auto 1em;
+	background:currentColor;
+	opacity: 0.5;
 }
 
 .portfolio{
@@ -427,20 +446,27 @@ header{
 	grid-template-columns: repeat(2,1fr);
 	grid-template-rows: repeat(2,1fr);
 	grid-gap: 10px;
+	margin:0 auto;
+
 }
 .portfolio__item{
-	background-color:var(--color-ciel);
+	background-color:var(--color-canard);
 	text-decoration: none;
 	color: var(--color-gris);
 	font-weight: bold;
-	font-size: 1.3em;
+	font-size: 1.1em;
 	overflow: hidden;
+	border-radius:10px;
+	width: 80%;
+	margin:0 auto;
+
 
 }
 .portfolio__img{
+	max-width: 60%;
+	margin:0 auto;
 	border:0;
-	border-radius: 10px 5px;
-	margin-top: 20px;
+	padding: 20px;
 	transition:
 		transform 600ms cubic-bezier(.5,0,.5,1),
 		opacity 250ms linear;
