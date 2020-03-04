@@ -1,0 +1,493 @@
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+}
+
+/*Propriétés générales personnalisées*/
+
+:root{
+	--ff-principale: "Quicksand";
+	--ff-second:"Source Code Pro";
+	--fw-reg:300;
+	--fw-bold:900;
+
+/*le mieux: avoir une palette de 3 couleurs -> light, dark et accent */
+	--color-jaune:#EAA020;
+	--color-canard:#157876;
+	--color-ciel:#74AEB1;
+	--color-gris:#D3DAD5;
+
+	--fs-h1:4.5rem;
+	--fs-h2:3.75rem;
+	--fs-h3:1.5rem;
+	--fs-body:1.125rem;
+
+	--box-shadow: 0.25em 0.25em 0.75em rgba(0,0,0,.25);
+}
+
+@media only screen and (max-width: 800px){/*pour les petits écrans*/
+	:root{
+	--fs-h1:3rem;
+	--fs-h2:2.25rem;
+	--fs-h3:1.25rem;
+	--fs-body:1rem;
+	}
+.section__subtitle--intro{
+	display: inline-block;
+}
+
+}
+
+@media screen and (min-width: 800px){/*pour les grands écrans*/
+.introduction{
+	height: 100vh;
+	padding-top: 150px;
+}	
+.intro{
+		display: grid;
+		width: min-content;
+		margin:0 auto;
+		grid-column-gap: 1em;
+		grid-template-areas:
+		"img title"
+		"img subtitle" ;
+		grid-template-columns:min-content max-content ;
+}
+
+.intro__img{
+		grid-area: img;
+		min-width: 250px;
+		position: relative;
+		z-index: 2;
+		box-shadow: var(--box-shadow);
+	}
+.section__subtitle--intro{
+	align-self: start;
+	grid-column: -1/1;
+	grid-row: 2;
+	text-align: right;
+	position: relative;
+	left: -1.5em;
+	width: calc(100% + 1.5em);
+}
+.section__subtitle--intro:hover{
+	color:var(--color-jaune);
+}
+#slogan{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 25px;
+	margin-top: 170px;
+	color: #111;
+	font-family: var(--ff-second);
+}
+.my-services{
+	height: 100vh;
+}
+.services{
+	display: flex;
+	max-width: 1100px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.service + .service{
+	margin-left: 2em;
+}
+.about-me{
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-rows: 1fr 70px 3fr;
+	grid-template-areas: 
+	"title img"
+	"subtitle img"
+	"text img ";
+	grid-column-gap: 2em;
+}
+.section__title--about{
+	grid-area:title;
+}
+.section__subtitle--about{
+	grid-area:subtitle;
+	height: 50px;
+	grid-column: 1/-1;
+	position: relative;
+	left:-2em;
+	width: calc(100% + 4em);/*bonne technique!!!*/
+}
+.about-me__body{
+	grid-area:text;
+	grid-column: 1;
+} 
+.about-me__img{
+	grid-area: img;
+	position: relative;
+	z-index: 2;
+	box-shadow: var(--box-shadow);
+	padding:10px;
+	background-color:var(--color-gris);
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.img{
+	max-height: 100%;
+	/*max-width: 100%;*/
+	border-radius: 5px;
+	border-color: var(--color-gris);
+}
+.portfolio{
+	height: 100vh;
+}
+.nav__link{
+	font-size: 2em;
+}
+}
+
+/*Styles généraux*/
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	background:var(--color-ciel);
+	margin:0;
+	padding:0;
+	font-family: var(--ff-principale);
+	font-size: var(--fs-body);
+	line-height: 1.6; 
+}
+
+img{
+	display: block;
+	max-width: 100%;
+	border:2px solid #D3DAD5;
+}
+
+strong{
+	font-weight: var(--fw-bold);
+	display: block;
+	color: var(--color-gris);
+}
+
+:focus{
+	outline:1px solid transparent;
+}
+/*Boutons*/
+.btn{
+	display: inline-block;
+	padding: .5em 1.5em;
+	background-color: var(--color-jaune);
+	color: var(--color-gris);
+	font-size: 1em;
+	border-radius: 20px 5px;
+	text-decoration: none;
+	cursor: pointer;
+	letter-spacing: 2px;
+	font-family: var(--ff-second);
+	font-weight: var(--fw-bold);
+	transition: transform 200ms ease-in-out;
+}
+.btn:hover{
+	transform: scale(1.2);
+}
+
+section{
+	padding: 3em 2em;
+
+}
+/*Typographie*/
+h1,
+h2,
+h3{
+	line-height: 1;
+	margin: 0;
+}
+
+h1{
+	font-size: var(--fs-h1);
+}
+h2{
+	font-size: var(--fs-h2);
+	color: var(--color-jaune);
+}
+h3{
+	font-size: var(--fs-h3);  
+}
+
+/*Titres et sous-titres*/
+
+.section__title{
+	margin-bottom: .25em;
+}
+
+.section__subtitle{
+	margin: 0;
+	font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+	background-color: var(--color-canard);
+	font-family: var(--ff-second);  
+	font-weight: var(--fw-reg);
+	margin-bottom: 1em;
+	padding: .25em 1em;
+
+}
+
+
+/*Header*/
+header{
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+}
+.nav{
+	position: fixed;
+	background-color: var(--color-canard);
+	color: var(--color-gris);
+	top:0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	z-index: 100;
+
+	transform: translateX(100%);/*pour le faire disparaitre en dehors de la fenêtre*/
+	transition:transform 300ms ease-in-out;
+}
+.nav__list{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	height: 100%;
+	margin:0;
+	padding: 0; 
+
+
+}
+.nav__link{
+	color: inherit;
+	text-decoration: none;
+	font-size: 1.5em;
+	margin-left: 30px;
+}
+.nav__link:hover{
+	color: var(--color-jaune);
+}
+
+/*Création de l'hamburger*/
+.nav-toggle{/*bouton*/
+	padding: 10px;
+	background:transparent;
+	border:0;
+	cursor: pointer;
+	position: absolute;
+	top:1em;
+	right: 1em;
+	z-index: 1000;/*quand le menu s'affiche, que le bouton reste affiché au dessus également*/
+}
+
+	/*Partie Javascript*/
+.nav-open .nav{/*pour lier la nouvelle class avec .nav et le faire apparaitre ou disparaitre*/
+	transform: translateX(80%);
+}
+.nav-open .nav-toggle{
+	position: fixed;
+
+}
+.nav-open .hamburger{
+	transform: rotate(130deg);
+}
+
+.nav-open .hamburger::before{
+	transform: rotate(100deg) translateX(-6px);
+}
+.nav-open .hamburger::after{
+	opacity: 0;
+}
+
+
+
+.hamburger{/*représente le trait dans le bouton*/
+	display: block;
+	position: relative;
+}
+
+.hamburger,
+.hamburger::before,/*représente le trait du dessus*/
+.hamburger::after{/*représente le trait du dessous pour avoir 3 traits qui compose l'hamburger*/
+	background-color:#111;
+	width: 2em;
+	height: 3px;
+	border-radius: 1em;
+	transition:transform 250ms ease-in-out;
+}
+
+.hamburger::before, 
+.hamburger::after{
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.hamburger::before{
+	top:6px;
+}
+.hamburger::after{
+	bottom:6px;
+}
+/*Intro section*/
+.intro{
+	position: relative;
+}
+/*My Services section*/
+
+.my-services{
+	background-color:var(--color-canard);
+	background-image: url("baobab.jpg");
+	border-radius: 20px;
+	background-size: cover;
+	background-blend-mode: multiply;
+	color: white;
+	text-align: center;
+}
+
+.section__title--services{
+	color:var(--color-jaune);
+	position: relative;
+}
+/*surlignement du titre*/
+.section__title--services::after{
+	content: "";
+	display: block;
+	width: 15%;
+	height: 1px;
+	margin: .5em auto 1em;
+	background:currentColor;
+	opacity: 0.5;
+}
+.services{
+	margin-bottom: 3.5em;
+}
+.service{
+	max-width: 500px;
+	margin:0 auto;
+}
+
+/*The about me section*/
+
+.about-me{
+	max-width: 1000px;
+	margin:0 auto;
+}
+.about-me__body{
+	text-align: justify;
+}
+.about-me__body h3{
+	color: var(--color-canard);
+}
+
+.img{
+	margin-top:20px;
+}
+
+/*My Works*/
+
+.my-work{
+	text-align: center;
+	background-color: var(--color-canard);
+	height: 100vh;
+}
+.section__subtitle, .portfolio{
+	color:var(--color-gris);
+}
+.section__subtitle{
+	margin-bottom: 2em;
+}
+
+.portfolio{
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-gap: 10px;
+}
+.portfolio__item{
+	background-color:var(--color-canard);
+	text-decoration: none;
+	color: var(--color-jaune);
+	font-size: 1.3em;
+	overflow: hidden;
+	height: 50vh;
+
+}
+.portfolio__img{
+	border:0;
+	border-radius: 10px 5px;
+	margin-top: 20px;
+	transition:
+		transform 600ms cubic-bezier(.5,0,.5,1),
+		opacity 250ms linear;
+
+}
+.portfolio__img:hover{
+	transform: scale(1.1);
+	opacity: .7;
+}
+
+/*Footer*/
+
+footer{
+	background-color: #111;
+	color:var(--color-jaune);
+	text-align: center;
+	padding:2.5em 0;
+}
+footer a{
+	color: inherit;
+	text-decoration: none;
+}
+
+footer i{
+	font-size: 1.7em;
+	transition: 
+	transform 400ms ease-in-out;
+}
+
+footer i:hover{
+	transform: scale(1.2);
+	opacity: .7;
+}
+
+.social-list{
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	margin:1em;
+	padding: 0;
+}
+.social-list__item{
+	margin:0 .5em;
+}
+.social-list__link{
+	padding: .5em;
+}
+
+/*page Portfolio*/
+
+.portfolio-item-individual{
+	padding: 0 2em 2em;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+
+
+
+
+

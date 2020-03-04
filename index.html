@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lucie Pottier-Lhéraud</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://kit.fontawesome.com/9b8268e16d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<div></div>
+		<button class="nav-toggle" aria-label="toggle-navigation">
+			<span class="hamburger"></span>
+		</button>
+		<nav class="nav">
+			<ul class="nav__list">
+				<li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+				<li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+				<li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+				<li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+			</ul>
+		</nav>
+	</header>
+
+<!--Introduction-->
+<div class="introduction">
+<section class="intro" id="home">
+	<h1 class="section__title section__title--intro">
+		Hi, I am <strong>Lucie Pottier</strong>
+	</h1>
+	<p class="section__subtitle section__subtitle--intro">Front End Dev</p>
+	<img src="images/profil.jpg" alt="photo-profil" class="intro__img"><!--mettre une photo qui me représente-->
+</section>
+<span id="slogan">Technology and Agriculture together...</span>
+</div>
+
+<!--My Services-->
+<section class="my-services" id="services">
+	<h2 class="section__title section__title--services">
+		What I do
+	</h2>
+	<div class="services"><!--container-->
+		<div class="service">
+			<h3>Front End Developer</h3>
+			<p>Et quoniam inedia gravi adflictabantur, locum petivere Paleas nomine, vergentem in mare, valido muro firmatum, ubi conduntur nunc usque commeatus distribui militibus omne latus Isauriae defendentibus adsueti. circumstetere igitur hoc munimentum.</p>
+		</div>
+		<div class="service">
+			<h3>HTML & CSS</h3>
+			<p>Et quoniam inedia gravi adflictabantur, locum petivere Paleas nomine, vergentem in mare, valido muro firmatum, ubi conduntur nunc usque commeatus distribui militibus omne latus Isauriae defendentibus adsueti. circumstetere igitur hoc munimentum per triduum et trinoctium et cum neque.</p>
+		</div>
+		<div class="service">
+			<h3>JQuery & React JS</h3>
+			<p>Et quoniam inedia gravi adflictabantur, locum petivere Paleas nomine, vergentem in mare, valido muro firmatum, ubi conduntur nunc usque commeatus distribui militibus omne latus Isauriae defendentibus adsueti. circumstetere igitur hoc munimentum per triduum et trinoctium et cum neque.</p>
+		</div>
+	</div>
+	<a href="#work" class="btn">My Work</a><!--bouton-->
+</section>
+
+<!--About me-->
+
+<section class="about-me" id="about">
+	<h2 class="section__title section__title--about">Who I am</h2>
+	<p class="section__subtitle section__subtitle--about">Agro Engineer & Front End Developer</p>
+
+	<div class="about-me__body"><!--container des paragraphes-->
+		<h3>Agro Engineer - Madagascar, Haiti and Mexico</h3>
+		<p>Diplômée de l'école d'ingénieur ISTOM en Agronomie et Développement International, j'ai plus de 5 ans d'expériences en Management de projets agricoles, ayant travaillé au sein d'entreprises sociales et start-up, développement de la production locale, aide aux petits producteurs.</p>
+		<h3>New Adventure: the Web Development</h3>
+		<p>Création d'outils technologiques au service de l'agriculture et des projets sociaux pour le développement durable.</p>
+	</div>
+	<div class="about-me__img">
+		<img src="images/about.jpg" alt="photo_haiti" class="img">
+		<img src="images/about_1.jpg" alt="photo_haiti" class="img">
+	</div>
+	
+</section>
+
+
+<!--My work-->
+
+<section class="my-work" id="work">
+	<h2 class="section__title">My work</h2>
+	<p class="section__subtitle">A selection of my range of work</p>
+
+	<div class="portfolio">
+		<a href="portfolio-item.html" class="portfolio__item">Madagascar
+			<img src="images/mada.jpg" alt="madagascar" class="portfolio__img"><!--image portfolio-->
+		</a>
+		<a href="#" class="portfolio__item">Mexique
+			<img src="images/mexique.jpg" alt="mexique" class="portfolio__img"><!--image portfolio-->
+		</a>
+		<a href="#" class="portfolio__item">Haiti
+			<img src="images/haiti_1.jpg" alt="haiti" class="portfolio__img"><!--image portfolio-->
+		</a>
+		<a href="#" class="portfolio__item">Mexique
+			<img src="images/mx.jpg" alt="mexique" class="portfolio__img"><!--image portfolio-->
+		</a>
+	</div>
+</section>
+
+<!--Footer-->
+<footer>
+	<ul class="social-list">
+		<li class="social-list__item">
+			<a href="mailto:lpottier3@gmail.com" class="social-list__link" target="_blank">
+				<i class="fas fa-envelope"></i><!--ajout des icons grâce à FontAwesome-->
+			</a>
+		</li>
+		<li class="social-list__item">
+			<a href="https://www.linkedin.com/in/lucie-pottier-lh%C3%A9raud-2019/" class="social-list__link" target="_blank">
+				<i class="fab fa-linkedin"></i>
+			</a>
+		</li>
+		<li class="social-list__item">
+			<a href="https://github.com/LuPlh" class="social-list__link" target="_blank">
+				<i class="fab fa-github-square"></i>
+			</a>
+		</li>
+		<li class="social-list__item">
+			<a href="https://twitter.com/Lu_plh_mx" class="social-list__link" target="_blank">
+				<i class="fab fa-twitter-square"></i>
+			</a>
+		</li>
+	</ul>
+	<a href="#home">Back to the top</a>
+</footer>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
