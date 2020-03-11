@@ -1,3 +1,5 @@
+//Navigation Menu - Hamburger
+
 $(document).ready(function(){
 
 let navToggle=$(".nav-toggle");
@@ -12,4 +14,5 @@ $(navLink).each(function(){
 		$("body").removeClass("nav-open");
 	})
 })
+
 })

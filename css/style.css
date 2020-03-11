@@ -1,18 +1,14 @@
-*,
-*::before,
-*::after{
+
+/*Caracteristicas generales personalizadas*/
+* {
 	box-sizing: border-box;
 }
-
-/*Propriétés générales personnalisées*/
-
 :root{
 	--ff-principale: "Quicksand";
 	--ff-second:"Source Code Pro";
 	--fw-reg:300;
 	--fw-bold:900;
 
-/*le mieux: avoir une palette de 3 couleurs -> light, dark et accent */
 	--color-jaune:#EAA020;
 	--color-canard:#157876;
 	--color-ciel:#74AEB1;
@@ -26,7 +22,9 @@
 	--box-shadow: 0.25em 0.25em 0.75em rgba(0,0,0,.25);
 }
 
-@media screen and (min-width: 800px){/*pour les grands écrans*/
+/*Pantalla grande - Laptop*/
+
+@media screen and (min-width: 900px){
 .introduction{
 	height: 100vh;
 	padding-top: 150px;
@@ -68,18 +66,7 @@
 	font-family: var(--ff-principale);
 	letter-spacing: .3em;
 }
-.nav{
-	background-color: var(--color-ciel);
-	color: var(--color-canard);
-	border-left:2px solid var(--color-jaune);
-}
 
-.nav__link{
-	color: inherit;
-	text-decoration: none;
-	font-size: 2em;
-	padding-left: 20px;
-}
 #slogan{
 	display: flex;
 	justify-content: flex-end;
@@ -122,7 +109,7 @@
 	grid-column: 1/-1;
 	position: relative;
 	left:-2em;
-	width: calc(100% + 5em);/*bonne technique!!!*/
+	width: calc(100% + 5em);
 }
 .about-me__body{
 	grid-area:text;
@@ -148,16 +135,17 @@
 }
 }
 
-/*---fin grands écrans---*/
 
+/* --- Pantallas < 900px --- */
 
-/*Styles généraux*/
+/*Estilo general*/
+
 html{
 	scroll-behavior: smooth;
 }
 
 body{
-	background:white;
+	background:var(--color-gris);
 	margin:0;
 	padding:0;
 	font-family: var(--ff-principale);
@@ -180,30 +168,14 @@ strong{
 :focus{
 	outline:1px solid transparent;
 }
-/*Boutons*/
-.btn{
-	display: inline-block;
-	padding: .5em 1.5em;
-	background-color: var(--color-jaune);
-	color: var(--color-gris);
-	font-size: 1em;
-	border-radius: 20px 5px;
-	text-decoration: none;
-	cursor: pointer;
-	letter-spacing: 2px;
-	font-family: var(--ff-second);
-	font-weight: var(--fw-bold);
-	transition: transform 200ms ease-in-out;
-}
-.btn:hover{
-	transform: scale(1.2);
-}
 
 section{
 	padding: 3em 2em;
 
 }
-/*Typographie*/
+
+/*Tipografía*/
+
 h1,
 h2,
 h3{
@@ -224,7 +196,8 @@ h3{
 	color: var(--color-canard);
 }
 
-/*Titres et sous-titres*/
+
+/*Titulos*/
 
 .section__title{
 	margin-bottom: .25em;
@@ -246,8 +219,29 @@ h3{
 
 }
 
+/*Button*/
+
+.btn{
+	display: inline-block;
+	padding: .5em 1.5em;
+	background-color: var(--color-jaune);
+	color: var(--color-gris);
+	font-size: 1em;
+	border-radius: 20px 5px;
+	text-decoration: none;
+	cursor: pointer;
+	letter-spacing: 2px;
+	font-family: var(--ff-second);
+	font-weight: var(--fw-bold);
+	transition: transform 200ms ease-in-out;
+}
+.btn:hover{
+	transform: scale(1.2);
+}
+
 
 /*Header*/
+
 header{
 	display: flex;
 	justify-content: space-between;
@@ -256,7 +250,7 @@ header{
 .nav{
 	position: fixed;
 	background-color: var(--color-canard);
-	opacity: .9;
+	border-left:2px solid var(--color-jaune);
 	top:0;
 	bottom: 0;
 	left:0;
@@ -282,14 +276,16 @@ header{
 .nav__link{
 	color: inherit;
 	text-decoration: none;
-	font-size: 1.5em;
+	font-size: 1.4em;
 	margin-left: 10px;
 }
 .nav__link:hover{
 	color: var(--color-jaune);
 }
 
-/*Création de l'hamburger*/
+
+/*Hamburger*/
+
 .nav-toggle{/*bouton*/
 	padding: 10px;
 	background:transparent;
@@ -298,11 +294,11 @@ header{
 	position: absolute;
 	top:1em;
 	right: 1em;
-	z-index: 1000;/*quand le menu s'affiche, que le bouton reste affiché au dessus également*/
+	z-index: 1000;
 }
-	/*Partie Javascript*/
+
 .nav-open .nav{/*pour lier la nouvelle class avec .nav et le faire apparaitre ou disparaitre*/
-	transform: translateX(83%);
+	transform: translateX(67%);
 }
 .nav-open .nav-toggle{
 	position: fixed;
@@ -319,16 +315,14 @@ header{
 	opacity: 0;
 }
 
-
-
 .hamburger{/*représente le trait dans le bouton*/
 	display: block;
 	position: relative;
 }
 
 .hamburger,
-.hamburger::before,/*représente le trait du dessus*/
-.hamburger::after{/*représente le trait du dessous pour avoir 3 traits qui compose l'hamburger*/
+.hamburger::before,/*le trait du dessus*/
+.hamburger::after{/*le trait du dessous pour avoir 3 traits qui compose l'hamburger*/
 	background-color:var(--color-jaune);
 	width: 2em;
 	height: 3px;
@@ -350,11 +344,19 @@ header{
 .hamburger::after{
 	bottom:6px;
 }
-/*Intro section*/
+
+
+
+/*Introduction*/
+
 .intro{
 	position: relative;
 }
 
+.intro__img{
+		border-color: var(--color-jaune);
+	
+	}
 #slogan{
 	display: flex;
 	justify-content: flex-end;
@@ -364,8 +366,12 @@ header{
 	font-family: var(--ff-principale);
 	letter-spacing: .2em;
 }
-/*My Services section*/
 
+/*My services*/
+
+.service__title{
+	color: var(--color-gris);
+}
 .my-services{
 	background-color:var(--color-canard);
 	background-image: url("baobab.jpg");
@@ -380,7 +386,7 @@ header{
 	color:var(--color-jaune);
 	position: relative;
 }
-/*surlignement du titre*/
+
 .section__title--services::after{
 	content: "";
 	display: block;
@@ -399,11 +405,12 @@ header{
 	text-align: justify;
 }
 
-/*The about me section*/
+/*About me*/
 
 .about-me{
 	max-width: 1000px;
 	margin:0 auto;
+	height:auto;
 }
 .about-me__body{
 	text-align: justify;
@@ -415,7 +422,7 @@ header{
 .img{
 	margin-top:20px;
 	border-radius: 5px;
-	border:3px solid var(--color-ciel);
+	border:3px solid var(--color-jaune);
 }
 
 /*My Works*/
@@ -423,14 +430,15 @@ header{
 .my-work{
 	text-align: center;
 	border-radius: 20px 20px 0 0;
-	background-color: var(--color-ciel);
-	/*height: 100vh;*/
+	background-color: rgba(21,120,118,.7);
+	box-shadow: var(--box-shadow);
 }
 .section__title--work{
 	color:var(--color-jaune);
 	position: relative;
 }
-/*surlignement du titre*/
+
+
 .section__title--work::after{
 	content: "";
 	display: block;
@@ -443,37 +451,41 @@ header{
 
 .portfolio{
 	display: grid;
-	grid-template-columns: repeat(2,1fr);
-	grid-template-rows: repeat(2,1fr);
-	grid-gap: 10px;
+	grid-template-columns: repeat(3,1fr);
 	margin:0 auto;
 
 }
 .portfolio__item{
-	background-color:var(--color-canard);
+	overflow: hidden;
+	width: 100%;
+}
+.portfolio__item a{
+	height: 0;
 	text-decoration: none;
 	color: var(--color-gris);
 	font-weight: bold;
 	font-size: 1.1em;
-	overflow: hidden;
-	border-radius:10px;
-	width: 80%;
-	margin:0 auto;
-
-
+	
+}
+.text_img{
+	font-size: .9em;
+	font-family: var(--ff-second);
+	font-weight: var(--fw-bold);
+	letter-spacing: .2em;
+	text-align: center;
 }
 .portfolio__img{
-	max-width: 60%;
+	cursor: pointer;
+	max-width: 90%;
 	margin:0 auto;
-	border:0;
-	padding: 20px;
+	border:1px solid var(--color-gris);
 	transition:
 		transform 600ms cubic-bezier(.5,0,.5,1),
 		opacity 250ms linear;
 
 }
 .portfolio__img:hover{
-	transform: scale(1.1);
+	transform: scale(.9);
 	opacity: .7;
 }
 
@@ -516,14 +528,16 @@ footer i:hover{
 	padding: .5em;
 }
 
-/*page Portfolio*/
+/*Pagina Portfolio*/
 
 .portfolio-item-individual{
 	padding: 0 2em 2em;
 	max-width: 1100px;
 	margin: 0 auto;
 }
-
+.portfolio-item-individual p{
+	text-align: justify;
+}
 
 
 
